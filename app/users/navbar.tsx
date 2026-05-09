@@ -40,8 +40,8 @@ export default function Navbar() {
             <div className="w-9 h-9 rounded-full bg-[#9EFF00] flex items-center justify-center shadow-[0_0_16px_#9EFF0066]">
               <Zap size={18} className="text-black fill-black" />
             </div>
-            <span className="font-bold text-white text-lg tracking-wide font-mono">
-              TECHNEO
+            <span className="font-bold text-white text-lg tracking-wide ">
+              CLARITYMAP
             </span>
           </motion.div>
 

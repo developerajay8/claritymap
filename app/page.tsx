@@ -1,6 +1,7 @@
 
 import AboutSection from "./users/aboutsection";
 import BackgroundEffects from "./users/backgroundeffect";
+import ContactSection from "./users/contactsection";
 import CTASection from "./users/ctasection";
 import ExpertiseSection from "./users/expertisesection";
 import Footer from "./users/footer";
@@ -10,7 +11,7 @@ import PortfolioSection from "./users/portfoliosection";
 import ProcessSection from "./users/processsection";
 import ServicesSection from "./users/servicessection";
 import TestimonialsSection from "./users/testimonialssection";
-import VideoSection from "./users/videosection";
+// import VideoSection from "./users/videosection";
 
 export default function Home() {
   return (
@@ -21,7 +22,7 @@ export default function Home() {
       <BackgroundEffects />
       <Navbar />
       <Hero />
-      <VideoSection />
+      {/* <VideoSection /> */}
       <AboutSection />
       <ServicesSection />
       <ProcessSection />
@@ -29,6 +30,7 @@ export default function Home() {
       <ExpertiseSection />
       <TestimonialsSection />
       <CTASection />
+      <ContactSection/>
       <Footer />
     </main>
   );

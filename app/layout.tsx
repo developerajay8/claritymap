@@ -99,7 +99,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "TECHNEO – Best Software Solution",
+  title: "CLARITYMAP – Best Software Solution",
   description:
     "High-Performance Software Designed To Streamline Operations & Boost Productivity",
 };

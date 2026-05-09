@@ -2,33 +2,39 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowUpRight, Play } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import Container from "./container";
 
 const PROJECTS = [
   {
-    category: "UI / UX Design",
-    title: "Creative Portfolio Platform",
-    color: "from-[#0e1a04] to-[#1c3008]",
-    accent: "#9EFF00",
+    category: "Commerce Coaching Website",
+    title: "Mahendra Commerce Classes Platform",
+    image: "/image copy 6.png",
+    link: "https://mahendra-commerce-classes.vercel.app/",
   },
   {
-    category: "Software Development",
-    title: "Financial Dashboard & SFG",
-    color: "from-[#050d02] to-[#0a1804]",
-    accent: "#9EFF00",
+    category: "Salon Website",
+    title: "Luxury Beauty & Hair Studio Experience",
+    image: "/image copy 2.png",
+    link: "https://finalsalon-phi.vercel.app/",
   },
   {
-    category: "Mobile Application",
-    title: "E-Commerce Mobile App",
-    color: "from-[#080808] to-[#111]",
-    accent: "#9EFF00",
+    category: "Dental Clinic",
+    title: "Urban Modern Dental Care Website",
+    image: "/image copy 4.png",
+    link: "https://urbanclinicjaipur.com/",
   },
   {
-    category: "AI Integration",
-    title: "AI Analytics Platform",
-    color: "from-[#06100a] to-[#0d1e10]",
-    accent: "#9EFF00",
+    category: "Story Platform",
+    title: "Creative Storytelling Landing Experience",
+    image: "/image copy 3.png",
+    link: "https://storyora.vercel.app/",
+  },
+  {
+    category: "Travel & Walking",
+    title: "Quick Walk Travel Booking Platform",
+    image: "/image copy 5.png",
+    link: "https://quick-walk.vercel.app/",
   },
 ];
 
@@ -46,17 +52,19 @@ export default function PortfolioSection() {
           backgroundSize: "56px 56px",
         }}
       />
+
       {/* Bottom glow */}
       <div
-        className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] pointer-events-none opacity-[0.06]"
+        className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] pointer-events-none opacity-[0.08]"
         style={{
-          background: "radial-gradient(ellipse at 50% 100%, rgba(158,255,0,0.6) 0%, transparent 70%)",
-          filter: "blur(60px)",
+          background:
+            "radial-gradient(ellipse at 50% 100%, rgba(158,255,0,0.6) 0%, transparent 70%)",
+          filter: "blur(70px)",
         }}
       />
 
       <Container className="relative z-10">
-        {/* Header row */}
+        {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-14">
           <div>
             <motion.div
@@ -67,8 +75,9 @@ export default function PortfolioSection() {
               className="flex items-center gap-2 mb-4"
             >
               <span className="text-[#9EFF00]">✦</span>
+
               <span className="text-[#9EFF00] text-xs font-semibold tracking-widest uppercase">
-                Our Recent Work
+                Premium Landing Page Designs
               </span>
             </motion.div>
 
@@ -80,20 +89,30 @@ export default function PortfolioSection() {
               className="text-4xl sm:text-5xl font-extrabold text-white leading-tight"
               style={{ fontFamily: "'Syne', sans-serif" }}
             >
-              Discover Our{" "}
+              Explore Our{" "}
               <span
                 className="text-transparent bg-clip-text"
                 style={{
-                  backgroundImage: "linear-gradient(90deg, #9EFF00, #c6ff5e)",
-                  filter: "drop-shadow(0 0 14px rgba(158,255,0,0.4))",
+                  backgroundImage:
+                    "linear-gradient(90deg, #9EFF00, #c6ff5e)",
+                  filter:
+                    "drop-shadow(0 0 14px rgba(158,255,0,0.4))",
                 }}
               >
-                Recent Work
+                Creative Projects
               </span>
             </motion.h2>
+
+            <p className="text-white/45 text-sm max-w-[560px] mt-5 leading-relaxed">
+              We craft high-converting premium websites with modern UI,
+              animations, responsive layouts, and powerful user experiences for
+              salons, clinics, education brands, restaurants, startups, and
+              luxury businesses.
+            </p>
           </div>
 
-          <motion.button
+          <motion.a
+            href="#"
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -101,15 +120,17 @@ export default function PortfolioSection() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.97 }}
             className="flex items-center gap-2 bg-[#9EFF00] text-black font-bold text-sm px-6 py-3 rounded-full flex-shrink-0 h-fit"
-            style={{ boxShadow: "0 0 24px rgba(158,255,0,0.45)" }}
+            style={{
+              boxShadow: "0 0 24px rgba(158,255,0,0.45)",
+            }}
           >
-            Explore Our Work
+            View All Projects
             <ArrowUpRight size={16} />
-          </motion.button>
+          </motion.a>
         </div>
 
-        {/* Portfolio cards row */}
-        <div className="flex gap-4 items-end overflow-x-auto pb-2 no-scrollbar">
+        {/* Portfolio cards */}
+        <div className="flex gap-5 items-end overflow-x-auto pb-3 no-scrollbar">
           {PROJECTS.map((project, i) => (
             <PortfolioCard
               key={i}
@@ -144,115 +165,149 @@ function PortfolioCard({
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
       animate={{
-        flex: isActive ? 2.5 : 1,
-        opacity: isActive ? 1 : 0.6,
+        flex: isActive ? 2.4 : 1,
+        opacity: isActive ? 1 : 0.65,
       }}
       style={{
-        minWidth: isActive ? 280 : 140,
-        transition: "all 0.5s cubic-bezier(0.22, 1, 0.36, 1)",
+        minWidth: isActive ? 360 : 180,
+        transition:
+          "all 0.5s cubic-bezier(0.22, 1, 0.36, 1)",
       }}
-      className="relative rounded-2xl overflow-hidden cursor-pointer group flex-shrink-0"
+      className="relative rounded-[28px] overflow-hidden cursor-pointer group flex-shrink-0"
     >
-      {/* Card bg */}
       <div
-        className={`w-full h-[340px] sm:h-[420px] bg-gradient-to-b ${project.color} relative`}
+        className="relative w-full h-[430px] sm:h-[560px] overflow-hidden bg-black"
         style={{
-          border: isActive ? "1px solid rgba(158,255,0,0.3)" : "1px solid rgba(255,255,255,0.06)",
-          boxShadow: isActive ? "0 0 40px rgba(158,255,0,0.12)" : "none",
+          border: isActive
+            ? "1px solid rgba(158,255,0,0.35)"
+            : "1px solid rgba(255,255,255,0.06)",
+
+          boxShadow: isActive
+            ? "0 0 60px rgba(158,255,0,0.16)"
+            : "0 0 0 rgba(0,0,0,0)",
         }}
       >
-        {/* Green glow top */}
+        {/* Background image */}
+        <img
+          src={project.image}
+          alt={project.title}
+          className={`w-full h-full object-cover transition-all duration-700 ${
+            isActive
+              ? "scale-100 grayscale-0"
+              : "scale-110 grayscale-[40%]"
+          }`}
+        />
+
+        {/* Dark overlay */}
         <div
-          className="absolute top-0 left-0 right-0 h-1/2 pointer-events-none transition-opacity duration-500"
+          className="absolute inset-0"
           style={{
-            background: "radial-gradient(ellipse at 50% 0%, rgba(158,255,0,0.18) 0%, transparent 70%)",
-            opacity: isActive ? 1 : 0.3,
+            background:
+              "linear-gradient(180deg, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.92) 100%)",
           }}
         />
 
-        {/* Person silhouette inside */}
-        <div className="absolute bottom-20 left-1/2 -translate-x-1/2 w-20 h-36">
-          <div
-            className="w-full h-full rounded-t-full opacity-50"
-            style={{
-              background: "linear-gradient(180deg, rgba(100,160,30,0.5), rgba(30,60,10,0.2))",
-            }}
-          />
-        </div>
+        {/* Green hover glow */}
+        <div
+          className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+          style={{
+            background:
+              "radial-gradient(circle at top, rgba(158,255,0,0.18), transparent 60%)",
+          }}
+        />
 
-        {/* Animated border glow */}
+        {/* Animated border */}
         {isActive && (
           <motion.div
-            animate={{ opacity: [0.4, 0.8, 0.4] }}
-            transition={{ duration: 2.5, repeat: Infinity }}
-            className="absolute inset-0 rounded-2xl pointer-events-none"
-            style={{ boxShadow: "inset 0 0 0 1px rgba(158,255,0,0.3)" }}
+            animate={{
+              opacity: [0.5, 1, 0.5],
+            }}
+            transition={{
+              duration: 2.5,
+              repeat: Infinity,
+            }}
+            className="absolute inset-0 rounded-[28px] pointer-events-none"
+            style={{
+              boxShadow:
+                "inset 0 0 0 1px rgba(158,255,0,0.35)",
+            }}
           />
         )}
 
-        {/* Play button — center */}
-        <AnimatePresence>
-          {isActive && (
-            <motion.div
-              initial={{ opacity: 0, scale: 0.7 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.7 }}
-              transition={{ duration: 0.3 }}
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-            >
-              <motion.div
-                animate={{ scale: [1, 1.1, 1] }}
-                transition={{ duration: 2, repeat: Infinity }}
-                className="w-14 h-14 rounded-full bg-[#9EFF00] flex items-center justify-center"
-                style={{ boxShadow: "0 0 30px rgba(158,255,0,0.6)" }}
-              >
-                <Play size={18} className="fill-black text-black ml-1" />
-              </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+        {/* Floating badge */}
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+          className="absolute top-5 left-5"
+        >
+          <div className="px-3 py-1.5 rounded-full border border-[#9EFF00]/30 bg-black/40 backdrop-blur-md">
+            <span className="text-[#9EFF00] text-[10px] font-bold tracking-wider uppercase">
+              Featured Project
+            </span>
+          </div>
+        </motion.div>
 
-        {/* Bottom info */}
+        {/* Bottom content */}
         <AnimatePresence>
           {isActive ? (
             <motion.div
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 16 }}
-              transition={{ duration: 0.35 }}
-              className="absolute bottom-0 left-0 right-0 p-5"
-              style={{
-                background: "linear-gradient(0deg, rgba(0,0,0,0.8) 0%, transparent 100%)",
-              }}
+              exit={{ opacity: 0, y: 25 }}
+              transition={{ duration: 0.4 }}
+              className="absolute bottom-0 left-0 right-0 p-7"
             >
               <span
-                className="inline-block px-3 py-1 rounded-full text-[10px] font-semibold mb-2"
+                className="inline-block px-3 py-1 rounded-full text-[10px] font-semibold mb-3"
                 style={{
                   background: "rgba(158,255,0,0.15)",
-                  border: "1px solid rgba(158,255,0,0.3)",
+                  border:
+                    "1px solid rgba(158,255,0,0.3)",
                   color: "#9EFF00",
                 }}
               >
                 {project.category}
               </span>
+
               <h3
-                className="text-white font-bold text-base"
+                className="text-white font-extrabold text-[28px] leading-tight max-w-[320px]"
                 style={{ fontFamily: "'Syne', sans-serif" }}
               >
                 {project.title}
               </h3>
-              <div className="flex items-center gap-1.5 mt-2">
-                <ArrowUpRight size={14} className="text-[#9EFF00]" />
-                <span className="text-[#9EFF00] text-xs font-semibold">View Project</span>
-              </div>
+
+              <p className="text-white/45 text-sm leading-relaxed mt-3 max-w-[330px]">
+                Modern responsive website crafted with premium UI,
+                smooth animations, luxury visuals, and strong
+                conversion-focused sections.
+              </p>
+
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <motion.div
+                  whileHover={{ x: 4 }}
+                  className="flex items-center gap-2 mt-6 text-[#9EFF00] w-fit"
+                >
+                  <span className="text-sm font-semibold">
+                    Explore Design
+                  </span>
+
+                  <ArrowUpRight size={16} />
+                </motion.div>
+              </a>
             </motion.div>
           ) : (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="absolute bottom-4 left-0 right-0 flex justify-center"
+              className="absolute bottom-6 left-1/2 -translate-x-1/2"
             >
-              <div className="w-1 h-1 rounded-full bg-white/30" />
+              <div className="w-2 h-2 rounded-full bg-white/30" />
             </motion.div>
           )}
         </AnimatePresence>
