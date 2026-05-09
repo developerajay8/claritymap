@@ -85,7 +85,7 @@ export default function Hero() {
     High-Converting
   </span>{" "}
   Landing Pages
-  <br />
+  
   That Turn Visitors Into Customers
 </motion.h1>
 

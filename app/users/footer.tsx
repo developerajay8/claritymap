@@ -410,7 +410,7 @@ export default function Footer() {
             WebkitTextStroke: "1px rgba(255,255,255,0.06)",
           }}
         >
-          CLARITY
+          CLARITYMAP
         </motion.p>
       </div>
     </footer>

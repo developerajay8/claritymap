@@ -24,12 +24,7 @@ const PROJECTS = [
     image: "/image copy 4.png",
     link: "https://urbanclinicjaipur.com/",
   },
-  {
-    category: "Story Platform",
-    title: "Creative Storytelling Landing Experience",
-    image: "/image copy 3.png",
-    link: "https://storyora.vercel.app/",
-  },
+  
   {
     category: "Travel & Walking",
     title: "Quick Walk Travel Booking Platform",
